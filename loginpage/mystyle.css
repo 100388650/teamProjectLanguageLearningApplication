@@ -1,0 +1,49 @@
+body {
+	background-color:  #2e3138;
+	font-family: 'Open Sans', san-serif;
+}
+
+#username {
+	height: 30px;
+	width: 300px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	margin: 230px 0px 0px 750px;
+}
+
+#password {
+	height: 30px;
+	width: 300px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	margin: 15px 0px 0px 750px;
+}
+
+#keep-me-logged-in {
+	margin: 20px 0px 0px 750px;
+}
+
+#keep-me-logged-in-text {
+	color: white;
+	font-size: 12px;
+	margin: -20px 0px 0px 770px;
+}
+
+#log-in {
+	padding: 10px 30px;
+	margin: 15px 750px;
+	background-color: #edc200;
+	border-color: #edc200;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	color: white;
+}
+
+.v1 {
+	border-left: 2px solid #3d414b;
+	height: 400px;
+	position: absolute;
+	left: 50%;
+	margin: -300px 0px 0px -20px;
+	box-shadow: 5px 0px 5px #26292f;
+}	
