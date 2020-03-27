@@ -3,35 +3,22 @@ body {
 	font-family: 'Open Sans', san-serif;
 }
 
-#username {
-	height: 30px;
-	width: 300px;
-	font-family: 'Open Sans', san-serif;
-	font-size: 15px;
-	margin: 230px 0px 0px 750px;
+.vertical-divider {
+	border-left: 2px solid #3d414b;
+	height: 400px;
+	position: absolute;
+	margin: -300px -100px;
+	box-shadow: 4px 0px 8px #000000;
 }
 
-#password {
-	height: 30px;
-	width: 300px;
-	font-family: 'Open Sans', san-serif;
-	font-size: 15px;
-	margin: 15px 0px 0px 750px;
+.login-registration-form {
+	margin: 250px 750px;
+	position: absolute;
 }
 
-#keep-me-logged-in {
-	margin: 20px 0px 0px 750px;
-}
-
-#keep-me-logged-in-text {
-	color: white;
-	font-size: 12px;
-	margin: -20px 0px 0px 770px;
-}
-
-#log-in {
+.btn-primary {
 	padding: 10px 30px;
-	margin: 15px 750px;
+	margin: 15px 0px;
 	background-color: #edc200;
 	border-color: #edc200;
 	font-family: 'Open Sans', san-serif;
@@ -39,11 +26,31 @@ body {
 	color: white;
 }
 
-.v1 {
-	border-left: 2px solid #3d414b;
-	height: 400px;
-	position: absolute;
-	left: 50%;
-	margin: -300px 0px 0px -20px;
-	box-shadow: 5px 0px 5px #26292f;
-}	
+#username {
+	height: 30px;
+	width: 300px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+}
+
+#password {
+	height: 30px;
+	width: 300px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	margin: 15px 0px;
+}
+
+#email-address {
+	height: 30px;
+	width: 300px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	margin: 200px 0px 0px 750px;
+}
+
+#keep-me-logged-in-text {
+	color: white;
+	font-size: 12px;
+	margin: -20px 0px;
+}
