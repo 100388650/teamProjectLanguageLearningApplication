@@ -7,13 +7,8 @@ body {
 	border-left: 2px solid #3d414b;
 	height: 400px;
 	position: absolute;
-	margin: -300px -100px;
+	margin: 125px 650px;
 	box-shadow: 4px 0px 8px #000000;
-}
-
-.login-registration-form {
-	margin: 250px 750px;
-	position: absolute;
 }
 
 .btn-primary {
@@ -24,6 +19,16 @@ body {
 	font-family: 'Open Sans', san-serif;
 	font-size: 15px;
 	color: white;
+}
+
+#login-form {
+	margin: 250px 750px;
+	position: absolute;
+}
+
+#registration-form {
+	margin: 200px 750px;
+	position: absolute;
 }
 
 #username {
@@ -46,7 +51,7 @@ body {
 	width: 300px;
 	font-family: 'Open Sans', san-serif;
 	font-size: 15px;
-	margin: 200px 0px 0px 750px;
+	margin: 15px 0px;
 }
 
 #keep-me-logged-in-text {
