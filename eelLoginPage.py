@@ -8,7 +8,7 @@ startup_options = { #startup options for the app
     'chromeFlags': ["--start-fullscreen", "--browser-startup-dialog"]
     }
 @eel.expose #allows the python function to be called as a JS function
-def fetchLoginDetails(): #gets usernames from the database
+def fetchLoginDetails(username): #gets usernames from the database
     try:
     connection = psycopg2.connect(user="",
                                   password="",
@@ -36,4 +36,4 @@ finally:
         connection.close()
         print("PostgreSQL connection is closed")
 
-eel.start('eelLoginPage.html', options=my_options)
+eel.start('language_learning_application_login_page.html', options=my_options)

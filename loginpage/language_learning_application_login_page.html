@@ -6,11 +6,23 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-	<input type="text" id="username" name="username" placeholder="Username"><br>
-	<input type="text" id="password" name="password" placeholder="Password"><br>
-	<input type="checkbox" id="keep-me-logged-in" name="keep-me-logged-in">
-	<p id="keep-me-logged-in-text"> Keep me logged in </p>
-	<input type="submit" id="log-in" value="Log in">
-	<div class="v1"><div>
+	<form>
+		<div id="login-form">
+			<input type="text" id="username" name="username" placeholder="Username"><br>
+			<input type="text" id="password" name="password" placeholder="Password"><br>
+			<input type="checkbox" id="keep-me-logged-in-checkbox" name="keep-me-logged-in">
+			<label for="keep-me-logged-in-checkbox" id="keep-me-logged-in-text">Keep me logged in</label><br>
+			<button onclick="button_handler()" type="submit" class="btn-primary">Log In</button>
+		</div>
+	</form>
+	
+	<div class="vertical-divider"></div>
+	
+	<script type="type/javascript">
+		function button_handler() {
+			var username = document.querySelector("#username").value
+			eel.fetchLoginDetails(username)
+		}
+	</script>
 </body>
 </html>
