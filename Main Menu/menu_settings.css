@@ -1,0 +1,60 @@
+body {
+	background-color:  #2E3138;
+	font-family: 'Open Sans', san-serif;
+}
+
+.btn-lesson {
+	position: absolute;
+	height: 750px;
+	width: 750px;
+	text-align: left;
+	margin: 150px 225px;
+	background-color:  #ee805b;
+	border-color:  #ee805b;
+	font-family: 'Open Sans', san-serif;
+	font-size: 45px;
+	color: white;
+}
+
+.btn-recap {
+	position: absolute;
+	height: 375px;
+	width: 750px;
+	text-align: left;
+	margin: 150px 975px;
+	background-color: #679eb3;
+	border-color: #679eb3;
+	font-family: 'Open Sans', san-serif;
+	font-size: 45px;
+	color: white;
+}
+
+.btn-profile {
+	position: absolute;
+	height: 375px;
+	width: 375px;
+	text-align: left;
+	margin: 525px 975px;
+	background-color: #fecc5d;
+	border-color: #fecc5d;
+	font-family: 'Open Sans', san-serif;
+	font-size: 45px;
+	color: white;
+}
+
+.btn-settings {
+	position: absolute;
+	height: 375px;
+	width: 375px;
+	text-align: left;
+	margin: 525px 1350px;
+	background-color: #7fb055;
+	border-color: #7fb055;
+	font-family: 'Open Sans', san-serif;
+	font-size: 45px;
+	color: white;
+}
+
+.lesson-image {
+
+}
