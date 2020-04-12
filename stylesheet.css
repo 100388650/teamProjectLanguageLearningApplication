@@ -1,7 +1,3 @@
-.login-registration-body {
-	background-color:  #2e3138;
-}
-
 .vertical-divider {
 	border-left: 2px solid #3d414b;
 	height: 400px;
@@ -18,6 +14,16 @@
 	font-family: 'Open Sans', san-serif;
 	font-size: 15px;
 	color: white;
+}
+
+.btn-group {
+	font-family: 'Open Sans', san-serif;
+	color: #ffffff;
+	border: none;
+}
+
+#login-body, #registration-body, #main-menu-body {
+	background-color:  #2e3138;
 }
 
 #login-form {
@@ -58,6 +64,40 @@
 	font-family: 'Open Sans', san-serif;
 	font-size: 12px;
 	margin: -20px 0px;
+}
+
+#btn-todays-lesson
+{
+	background-color: #ee805b;
+}
+
+#btn-layout-todays-lesson
+{
+	height: 400px;
+	width: 500px;
+}
+
+#btn-label-todays-lesson
+{
+	font-size: 70px;
+	text-align: left;
+	padding-left: 20px;
+}
+
+#btn-image-todays-lesson
+{
+	height: 175px;
+	width: 175px;
+	padding-right: 20px;
+}
+
+#btn-synopsis-todays-lesson
+{
+	font-weight: 100;
+	font-size: 17px;
+	text-align: left;
+	padding-left: 20px;
+	vertical-align: text-top;
 }
 
 #todays-lesson-border-top {
