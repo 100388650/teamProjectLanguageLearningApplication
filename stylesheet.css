@@ -1,0 +1,71 @@
+.login-registration-body {
+	background-color:  #2e3138;
+}
+
+.vertical-divider {
+	border-left: 2px solid #3d414b;
+	height: 400px;
+	position: absolute;
+	margin: 125px 650px;
+	box-shadow: 4px 0px 8px #000000;
+}
+
+.btn-primary {
+	padding: 10px 30px;
+	margin: 15px 0px;
+	background-color: #edc200;
+	border-color: #edc200;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	color: white;
+}
+
+#login-form {
+	margin: 250px 750px;
+	position: absolute;
+}
+
+#registration-form {
+	margin: 200px 750px;
+	position: absolute;
+}
+
+#username {
+	height: 30px;
+	width: 300px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+}
+
+#password {
+	height: 30px;
+	width: 300px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	margin: 15px 0px;
+}
+
+#email-address {
+	height: 30px;
+	width: 300px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	margin: 15px 0px;
+}
+
+#keep-me-logged-in-text {
+	color: white;
+	font-family: 'Open Sans', san-serif;
+	font-size: 12px;
+	margin: -20px 0px;
+}
+
+#todays-lesson-border-top {
+	background-image: linear-gradient(#ee805b, #f03c00);
+	width: 100vw;
+    height: 100vh;
+}
+
+#todays-lesson-border-bottom {
+	
+}
