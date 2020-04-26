@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise</title>
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="todays-lesson-border-top">
+		<p class="exercise-title">Exercise 1</p>
+	</div>
+	<p class="exercise-question">Finish this sentence: Ravi de vous</p>
+	<div ondrop="drop(e)" ondragover="allowDrop(e)"></div>
+	<div class="container">
+		<div id="exercise-answer1">bisou</div>
+		<div id="exercise-answer2">câlin</div>
+		<div id="exercise-answer3">chemise</div>
+		<div id="exercise-answer4">rencontrer</div>
+		<div id="exercise-answer5">arbre</div>
+	</div>
+	<div class="todays-lesson-border-bottom"></div>
+	<script>
+		var container = document.querySelector(".container");
+		var activeElement = null;
+		
+		var active = false;
+		
+		container.addEventListener("touchstart", dragStart, false);
+		container.addEventListener("touchend", dragEnd, false);
+		container.addEventListener("touchmove", drag, false);
+		
+		container.addEventListener("mousedown", dragStart, false);
+		container.addEventListener("mouseup", dragEnd, false);
+		container.addEventListener("mousemove", drag, false);
+		
+		function dragStart(e) {
+			if (e.target !== e.currentTarget) {
+				active = true;
+			
+				activeElement = e.target;
+			
+				if (activeElement !== null) {
+					if (!activeElement.xOffset) {
+						activeElement.xOffset = 0;
+					}
+			
+					if (!activeElement.yOffset) {
+						activeElement.yOffset = 0;
+					}
+			
+					if (e.type === "touchstart") {
+						activeElement.initialX = e.touches[0].clientX - activeElement.xOffset;
+						activeElement.initialY = e.touches[0].clientY - activeElement.yOffset;
+					} else {
+						activeElement.initialX = e.clientX - activeElement.xOffset;
+						activeElement.initialY = e.clientY - activeElement.yOffset;
+					}
+				}
+			}
+		}
+		
+		function dragEnd(e) {
+			if (activeElement !== null) {
+				activeElement.initialX = activeElement.currentX;
+				activeElement.initialY = activeElement.currentY;
+			}
+			
+			active = false;
+			activeElement = null;
+		}
+		
+		function drag(e) {
+			if (active) {
+				e.preventDefault();
+				
+				if (e.type === "touchmove") {
+					activeElement.currentX = e.touches[0].clientX - activeElement.initialX;
+					activeElement.currentY = e.touches[0].clientY - activeElement.initialY;
+				} else {
+					activeElement.currentX = e.clientX - activeElement.initialX;
+					activeElement.currentY = e.clientY - activeElement.initialY;
+				}
+				
+				activeElement.xOffset = activeElement.currentX;
+				activeElement.yOffset = activeElement.currentY;
+				
+				setTranslate(activeElement.currentX, activeElement.currentY, activeElement);
+			}
+		}
+		
+		function setTranslate(xPos, yPos, el) {
+			el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+		}
+	</script>
+</body>
+</html>
