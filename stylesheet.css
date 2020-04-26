@@ -22,6 +22,41 @@
 	border: none;
 }
 
+.todays-lesson-border-top {
+	background-image: linear-gradient(#ee805b, #f03c00);
+	height: 80px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.todays-lesson-border-bottom {
+	background-image: linear-gradient(#ee805b, #f03c00);
+	height: 80px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.exercise-title {
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 5px;
+}
+
+.exercise-question {
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	padding-top: 90px;
+}
+
 #login-body, #registration-body, #main-menu-body {
 	background-color:  #2e3138;
 }
@@ -100,12 +135,77 @@
 	vertical-align: text-top;
 }
 
-#todays-lesson-border-top {
-	background-image: linear-gradient(#ee805b, #f03c00);
-	width: 100vw;
-    height: 100vh;
+#container {
+      width: 100%;
+      height: 400px;
 }
 
-#todays-lesson-border-bottom {
-	
+#exercise-answer1{
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 75px;
+	background-color: #ffffff;
+	height: 75px;
+	width: 175px;
+	border-style: solid;
+	margin: 80px 0px 0px 175px;
+}
+
+#exercise-answer2{
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 75px;
+	background-color: #ffffff;
+	height: 75px;
+	width: 175px;
+	border-style: solid;
+	margin: 75px 0px 0px 375px;
+}
+
+#exercise-answer3{
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 75px;
+	background-color: #ffffff;
+	height: 75px;
+	width: 175px;
+	border-style: solid;
+	margin: -237px 0px 0px 575px;
+}
+
+#exercise-answer4{
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 75px;
+	background-color: #ffffff;
+	height: 75px;
+	width: 175px;
+	border-style: solid;
+	margin: 75px 0px 0px 775px;
+}
+
+#exercise-answer5{
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 75px;
+	background-color: #ffffff;
+	height: 75px;
+	width: 175px;
+	border-style: solid;
+	margin: -237px 0px 0px 975px;
 }
