@@ -1,60 +1,239 @@
+.vertical-divider {
+	border-left: 2px solid #3d414b;
+	height: 400px;
+	position: absolute;
+	margin: 125px 650px;
+	box-shadow: 4px 0px 8px #000000;
+}
+
+.btn-primary {
+	padding: 10px 30px;
+	margin: 15px 0px;
+	background-color: #edc200;
+	border-color: #edc200;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	color: white;
+}
+
+.btn-group {
+	font-family: 'Open Sans', san-serif;
+	color: #ffffff;
+	border: none;
+}
+
+#login-body, #registration-body, #main-menu-body {
+	background-color:  #2e3138;
+}
+
+#login-form {
+	margin: 250px 750px;
+	position: absolute;
+}
+
+#registration-form {
+	margin: 200px 750px;
+	position: absolute;
+}
+
+#username {
+	height: 30px;
+	width: 300px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+}
+
+#password {
+	height: 30px;
+	width: 300px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	margin: 15px 0px;
+}
+
+#email-address {
+	height: 30px;
+	width: 300px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	margin: 15px 0px;
+}
+
+#keep-me-logged-in-text {
+	color: white;
+	font-family: 'Open Sans', san-serif;
+	font-size: 12px;
+	margin: -20px 0px;
+}
+
 body {
 	background-color:  #2E3138;
-	font-family: 'Open Sans', san-serif;
 }
 
-.btn-lesson {
-	position: absolute;
+#btn-todays-lesson
+{
+	background-color: #ee805b;
+}
+
+#btn-layout-todays-lesson
+{
 	height: 750px;
 	width: 750px;
-	text-align: left;
-	margin: 150px 225px;
-	background-color:  #ee805b;
-	border-color:  #ee805b;
-	font-family: 'Open Sans', san-serif;
-	font-size: 45px;
-	color: white;
 }
 
-.btn-recap {
-	position: absolute;
+#btn-label-todays-lesson
+{
+	font-size: 90px;
+	text-align: left;
+	padding-left: 20px;
+}
+
+#btn-image-todays-lesson
+{
+	height: 375px;
+	width: 375px;
+	padding-right: 20px;
+}
+
+#btn-synopsis-todays-lesson
+{
+	font-weight: 100;
+	font-size: 27px;
+	text-align: left;
+	padding-left: 20px;
+	vertical-align: text-top;
+}
+
+#todays-lesson-border-top {
+	background-image: linear-gradient(#ee805b, #f03c00);
+	width: 100vw;
+    height: 100vh;
+}
+
+#todays-lesson-border-bottom {
+
+}
+
+#btn-recap-lesson
+{
+	background-color: #679eb3;
+}
+
+#btn-layout-recap-lesson
+{
 	height: 375px;
 	width: 750px;
-	text-align: left;
-	margin: 150px 975px;
-	background-color: #679eb3;
-	border-color: #679eb3;
-	font-family: 'Open Sans', san-serif;
-	font-size: 45px;
-	color: white;
 }
 
-.btn-profile {
-	position: absolute;
-	height: 375px;
-	width: 375px;
+#btn-label-recap-lesson
+{
+	font-size: 70px;
 	text-align: left;
-	margin: 525px 975px;
+	padding-left: 20px;
+}
+
+#btn-synopsis-recap-lesson
+{
+	font-weight: 100;
+	font-size: 17px;
+	text-align: left;
+	padding-left: 20px;
+	vertical-align: text-top;
+}
+
+#recap-lesson-border-top {
+	background-image: linear-gradient(#679eb3, #0498d1);
+	width: 100vw;
+    height: 100vh;
+}
+
+#recap-lesson-border-bottom {
+
+}
+
+#btn-user-profile
+{
 	background-color: #fecc5d;
-	border-color: #fecc5d;
-	font-family: 'Open Sans', san-serif;
-	font-size: 45px;
-	color: white;
 }
 
-.btn-settings {
-	position: absolute;
+#btn-layout-user-profile
+{
 	height: 375px;
 	width: 375px;
-	text-align: left;
-	margin: 525px 1350px;
-	background-color: #7fb055;
-	border-color: #7fb055;
-	font-family: 'Open Sans', san-serif;
-	font-size: 45px;
-	color: white;
 }
 
-.lesson-image {
+#btn-label-user-profile
+{
+	font-size: 70px;
+	text-align: center;
+	/*padding-left: 20px;*/
+}
+
+#btn-image-user-profile
+{
+	height: 175px;
+	width: 175px;
+	padding-right: 20px;
+}
+
+#btn-synopsis-user-profile
+{
+	font-weight: 100;
+	font-size: 17px;
+	text-align: left;
+	padding-left: 20px;
+	vertical-align: text-top;
+}
+
+#user-profile-border-top {
+	background-image: linear-gradient(#ee805b, #f03c00);
+	width: 100vw;
+	height: 100vh;
+}
+
+#user-profile-border-bottom {
+
+}
+
+#btn-settings
+{
+	background-color: #7fb055;
+}
+
+#btn-layout-settings
+{
+	height: 375px;
+	width: 375px;
+}
+
+#btn-label-settings
+{
+	font-size: 70px;
+	text-align: center;
+}
+
+#btn-image-settings
+{
+	height: 175px;
+	width: 175px;
+	padding-right: 20px;
+}
+
+#btn-synopsis-settings
+{
+	font-weight: 100;
+	font-size: 17px;
+	text-align: left;
+	padding-left: 20px;
+	vertical-align: text-top;
+}
+
+#settings-border-top {
+	background-image: linear-gradient(#ee805b, #f03c00);
+	width: 100vw;
+	height: 100vh;
+}
+
+#settings-border-bottom {
 
 }
