@@ -101,46 +101,139 @@
 	margin: -20px 0px;
 }
 
-#btn-todays-lesson
-{
+#menu-container {
+	position: absolute;
+	top: 12%;
+	left: 4%;
+	display: grid;
+	grid-template-columns: 500px;
+	grid-template-rows: repeat(2, 250px);	
+}
+
+#btn-todays-lesson {
 	background-color: #ee805b;
-}
-
-#btn-layout-todays-lesson
-{
-	height: 400px;
+	height: 500px;
 	width: 500px;
+	grid-column-start: 1;
 }
 
-#btn-label-todays-lesson
-{
+#btn-layout-todays-lesson {
+	display: grid;
+	grid-template-columns: repeat(2, 250px);
+	grid-auto-rows: 250px;
+}
+
+#btn-label-todays-lesson {
 	font-size: 70px;
 	text-align: left;
-	padding-left: 20px;
+	position: relative;
+	left: 20px;
+	grid-column-start: 1;
 }
 
-#btn-image-todays-lesson
-{
-	height: 175px;
-	width: 175px;
-	padding-right: 20px;
+#btn-image-todays-lesson {
+	height: 225px;
+	width: 225px;
+	position: relative;
+	top: 60px;
+	left: 10px;
+	grid-column-start: 2;
 }
 
-#btn-synopsis-todays-lesson
-{
+#btn-synopsis-todays-lesson {
 	font-weight: 100;
 	font-size: 17px;
 	text-align: left;
-	padding-left: 20px;
-	vertical-align: text-top;
+	position: relative;
+	top: 50px;
+	right: 30px;
+	left: 20px;
+	margin-right: 60px;
+	margin-bottom: 100px;
+	grid-column-start: 1;
+	grid-column-end: 3;
+	grid-row-start: 2;
 }
 
-#container {
-      width: 100%;
-      height: 400px;
+#btn-recap-lesson {
+	background-color: #679eb3;
+	height: 250px;
+	width: 750px;
+	grid-column-start: 2;
 }
 
-#exercise-answer1{
+#btn-layout-recap-lesson {
+	display: grid;
+	grid-template-columns: repeat(2, 350px);
+}
+
+#btn-label-recap-lesson {
+	font-size: 70px;
+	text-align: left;
+	position: relative;
+	bottom: 45px;
+	left: 20px;
+	grid-column-start: 1;
+}
+
+#btn-synopsis-recap-lesson {
+	font-weight: 100;
+	font-size: 17px;
+	text-align: left;
+	position: relative;
+	top: 35px;
+	right: 20px;
+	grid-column-start: 2;
+}
+
+#btn-user-profile {
+	background-color: #fecc5d;
+	height: 250px;
+	width: 375px;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+}
+
+#btn-label-user-profile {
+	font-size: 40px;
+	text-align: center;
+	position: relative;
+	bottom: 30px;
+}
+
+#btn-image-user-profile {
+`	height: 125px;
+	width: 125px;
+	position: relative;
+	top: 10px;
+}
+
+#btn-settings {
+	background-color: #7fb055;
+	height: 250px;
+	width: 375px;
+	margin-left: 375px;
+	grid-column-start: 2;
+	grid-column-end: 3;
+	grid-row-start: 2;
+}
+
+#btn-label-settings {
+	font-size: 40px;
+	text-align: center;
+	position: relative;
+	bottom: 30px;
+}
+
+#btn-image-settings {
+	height: 175px;
+	width: 175px;
+	position: relative;
+	top: 10px;
+}
+
+#exercise-answer-1 {
 	font-family: 'Open Sans', san-serif;
 	font-size: 20px;
 	font-weight: 700;
@@ -154,7 +247,7 @@
 	margin: 80px 0px 0px 175px;
 }
 
-#exercise-answer2{
+#exercise-answer-2 {
 	font-family: 'Open Sans', san-serif;
 	font-size: 20px;
 	font-weight: 700;
@@ -168,7 +261,7 @@
 	margin: 75px 0px 0px 375px;
 }
 
-#exercise-answer3{
+#exercise-answer-3 {
 	font-family: 'Open Sans', san-serif;
 	font-size: 20px;
 	font-weight: 700;
@@ -182,7 +275,7 @@
 	margin: -237px 0px 0px 575px;
 }
 
-#exercise-answer4{
+#exercise-answer-4 {
 	font-family: 'Open Sans', san-serif;
 	font-size: 20px;
 	font-weight: 700;
@@ -196,7 +289,7 @@
 	margin: 75px 0px 0px 775px;
 }
 
-#exercise-answer5{
+#exercise-answer-5 {
 	font-family: 'Open Sans', san-serif;
 	font-size: 20px;
 	font-weight: 700;
@@ -209,3 +302,14 @@
 	border-style: solid;
 	margin: -237px 0px 0px 975px;
 }
+
+#answer-drop-target {
+	border-bottom: dotted;
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	font-weight: 700;
+	height: 25px;
+	width: 110px;
+	margin: -47px 0px 0px 850px;
+}
+	
