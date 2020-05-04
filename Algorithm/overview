@@ -1,0 +1,41 @@
+Card layout:
+Each card will be given the following attributes:
+    Content (the exercise/ word etc)
+    Date of first access (the date on which the card was first loaded (changed from Null to A))
+    Category
+    Date of category change (the date on which the category changed from the previous one to the current)
+
+Algorithm:
+Upon first being used, assigns date of first use
+Fetches new cards (number specified by the user in the settings; default 10)
+Assigns date of first access
+Starts counter for the start of the study session
+Assigns category:
+    Based of places in the fibonacci sequence:
+    (The first 3 categories are for use during the initial study session, if the study session
+    is cancelled before they reach category 1, then the cards will be reset to 'Null').
+    Null - A card that has not been used
+    0.1* - 1 minute
+    0.2 - 3 minutes
+    0.3 - 5 minutes
+    1 - 1 day
+    2 - 2 days
+    3 - 3 days
+    4 - 5 days
+    etc...
+    * 0.1, 0.2 and 0.3 are used for the first stages of the card, rather than 'A,B' and 'C', due to simplicity of implementation in SQL: it is
+    easier to manipulate decimal numbers and have all categories of the same type than have two separate values, one for
+    category - as an integer - and one for the first 3 categories - as text.
+    Up to the point where the card is considered to be in 'long term memory'
+    (6 months: https://www.quora.com/Whats-the-best-spaced-repetition-schedule)
+Checks days elapsed since date of first use
+Checks the category of each card; check if the current date is within the range for that
+card to be called, based on its category:
+    For example, if a card was assigned category 4 on the 20-4-2020, then it would be next called
+    on 24-4-2020. If the current date were 23-4-2020, then that card would not be called.
+If the user gets the answer wrong:
+    Reset category back to 0
+If the user gets the answer correct:
+    Move the category forward 1
+After each card, the time since elapsed since the start of the study session is checked:
+    The time is rounded to the nearest minute.
