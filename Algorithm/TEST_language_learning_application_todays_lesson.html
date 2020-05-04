@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise</title>
+	<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+	<script src="databaseIntereaction.js"></script>
+</head>
+<body>
+	<div class="todays-lesson-border-top">
+		<p class="exercise-title">Exercise 1</p>
+	</div>
+	<p class="exercise-question">Finish this sentence: Ravi de vous</p>
+	<div class="exercise-container">
+		<div id="answer-drop-target" data-draggable="Target"></div>
+	</div>
+	<div id="answer-grid">
+		<div id="exercise-answer-1" data-draggable="answer">
+			<p data-draggable="answer">bisou</p>
+		</div>
+		<div id="exercise-answer-2">
+			<p data-draggable="answer">câlin</p>
+		</div>
+		<div id="exercise-answer-3">
+			<p data-draggable="answer">chemise</p>
+		</div>
+		<div id="exercise-answer-4">
+			<p data-draggable="answer">rencontrer</p>
+		</div>
+		<div id="exercise-answer-5">
+			<p data-draggable="answer">arbre</p>
+		</div>
+		<!--Below is a test answer field for passing data from an Eel function-->
+		<div id="text-exercise">
+			<p data-draggable="answer" id="testAnswerText" value=""> </p>
+		</div>
+	</div>
+	<button class="exercise-submit-button">Submit</button>
+	<!--Below is a test submit button for the passing of data from an Eel function -->
+	<form id="yearForm">
+		<input type="button" onclick="updateAnswer()" value="Submit">
+	</form>
+	<div class="todays-lesson-border-bottom"></div>
+	<script>
+		// Get new cards will be called from the databaseInteraction.js here
+	</script>
+	<script>
+		(function()
+	{
+		for(var 
+			items = document.querySelectorAll('[data-draggable="answer"]'), 
+			len = items.length, 
+			i = 0; i < len; i ++)
+		{
+			items[i].setAttribute('draggable', 'true');
+		}
+	
+	var item = null;
+
+	document.addEventListener('dragstart', function(e)
+	{
+		item = e.target;
+		e.dataTransfer.setData('text', '');
+	
+	}, false);
+
+	document.addEventListener('dragover', function(e)
+	{
+		if(item)
+		{
+			e.preventDefault();
+		}
+	
+	}, false);	
+
+	document.addEventListener('drop', function(e)
+	{
+		if(e.target.getAttribute('data-draggable') == 'Target')
+		{
+			e.target.appendChild(item);
+			
+			e.preventDefault();
+		}
+	
+	}, false);
+	
+	document.addEventListener('dragend', function(e)
+	{
+		item = null;
+		
+		for(var 
+			items = document.querySelectorAll('[data-draggable="answer"]'), 
+			len = items.length, 
+			i = 0; i < len; i ++)
+		{
+			items[i].setAttribute('draggable', 'false');
+		}
+	
+	}, false);
+
+})();	
+
+	</script>
+</body>
+</html>
