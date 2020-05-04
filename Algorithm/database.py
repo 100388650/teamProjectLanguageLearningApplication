@@ -5,6 +5,7 @@ import functions
 amountToFetch = 10
 newCat = "example" # The new category is defined here, when a card has been reviewed
 currentCard = "example" # The card currently being reviewed is defined here
+userId = 123 # The ID of the currently logged in user is defined here
 
 connection = psycopg2.connect(user="",
                                   password="",
@@ -25,7 +26,7 @@ cursor = connection.cursor()
 def get_new_cards():
     try:
         # First get the new car
-        postgreSQL_select_Query = sql.SQL("select * from cards where category IS NULL").format(sql.Identifier(amountToFetch))
+        postgreSQL_select_Query = sql.SQL("select * from cards where category IS NULL and userId = ($i)").format(sql.Identifier(userId))
         cursor.execute(postgreSQL_select_Query)
         new_cards = cursor.fetchmany(amountToFetch) # Limits the number of rows fetched by 'amountToFetch'
         return new_cards
@@ -37,7 +38,7 @@ def get_new_cards():
 def return_review_cards():
     try:
         # First get all cards except Null ones
-        postgreSQL_select_Query = "select id, category, firstDayUsed from cards where category IS NOT NULL" # The program will parse through categories and store the ids of cards that are to be reviewed
+        postgreSQL_select_Query = "select id, category, content, firstDayUsed from cards where category IS NOT NULL" # The program will parse through categories and store the ids of cards that are to be reviewed
         cursor.execute(postgreSQL_select_Query)
         all_cards = cursor.fetchall()
         review_cards = []
@@ -45,7 +46,7 @@ def return_review_cards():
         while i <= all_cards.length:
             for row in all_cards:
                 cardId = row[0]
-                firstDayUsed = row[2]
+                firstDayUsed = row[3]
                 if functions.start_of_study_check(firstDayUsed): # The program will append the card to the review cards array if the card is on a 'review day' (as defined by the fibonacci sequence)
                     review_cards.append(cardId)
                     i = (i+1)
@@ -57,13 +58,15 @@ def return_review_cards():
         return error
         # Throw appropriate error here
 
+
 def update_new_card(answer, cardId, category):
     # Updates the new cards for the current study session (category A, B and C cards)
     newCat = functions.calculate_next_cat(answer,category) # This returns the new category
-    postgreSQL_select_Query = sql.SQL("update cards set category = ($s) where id = ($s)").format(sql.Identifier(newCat, cardId))
+    postgreSQL_select_Query = sql.SQL("update cards set category = ($s) where id = ($d) and userId = ($i)").format(sql.Identifier(newCat, cardId, userId))
     cursor.execute(postgreSQL_select_Query)
+
 
 def update_card(answer, cardId, category):
     newCat = functions.calculate_next_date(answer, category) # This returns the new category
-    postgreSQL_select_Query = sql.SQL("update cards set category = ($d) where id = ($s)").format(sql.Identifier(newCat, cardId))
+    postgreSQL_select_Query = sql.SQL("update cards set category = ($d) where id = ($d) and userId = ($i)").format(sql.Identifier(newCat, cardId, userId))
     cursor.execute(postgreSQL_select_Query)
