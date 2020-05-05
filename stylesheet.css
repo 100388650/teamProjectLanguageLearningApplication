@@ -2,7 +2,9 @@
 	border-left: 2px solid #3d414b;
 	height: 400px;
 	position: absolute;
-	margin: 125px 650px;
+	left: 50%;
+	top: 50%;
+	margin-top: -200px;
 	box-shadow: 4px 0px 8px #000000;
 }
 
@@ -41,12 +43,13 @@
 }
 
 .exercise-title {
+	position: relative;
+	bottom: 50%;
 	font-family: 'Open Sans', san-serif;
 	font-size: 20px;
 	font-weight: 700;
 	color: #ffffff;
 	text-align: center;
-	padding-top: 5px;
 }
 
 .exercise-question {
@@ -57,18 +60,96 @@
 	padding-top: 90px;
 }
 
+.exercise-submit-button {
+	background-color: green;
+	border: none;
+	height: 50px;
+	width: 100px;
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -50px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: #ffffff;
+}
+
+.sidenav {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-image: linear-gradient(#ee805b, #f03c00);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.sidenav a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	color: #ffffff;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.navicon {
+	position: relative;
+	left: 20px;
+	top: 15px;
+	font-size: 30px;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+.progress-bar-container {
+	width: 100%;
+	text-align: center;
+	position: relative;
+	top: 25%;
+}
+
+.progress-bar-dot {
+  height: 25px;
+  width: 25px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 5px;
+}
+
 #login-body, #registration-body, #main-menu-body {
 	background-color:  #2e3138;
 }
 
 #login-form {
-	margin: 250px 750px;
 	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -100px;
+	margin-left: 100px;
 }
 
 #registration-form {
-	margin: 200px 750px;
 	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -120px;
+	margin-left: 100px;
 }
 
 #username {
@@ -101,12 +182,16 @@
 	margin: -20px 0px;
 }
 
+#container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
 #menu-container {
-	position: absolute;
-	top: 12%;
-	left: 4%;
 	display: grid;
-	grid-template-columns: 500px;
+	grid-template-columns: repeat(1, 500px);
 	grid-template-rows: repeat(2, 250px);	
 }
 
@@ -233,18 +318,29 @@
 	top: 10px;
 }
 
+#answer-grid {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 50%;
+	right: 50%;
+	margin-left: -1000px;
+	display: grid;
+	grid-auto-columns: 60px;
+	grid-auto-rows: 100px;
+}
+
 #exercise-answer-1 {
 	font-family: 'Open Sans', san-serif;
 	font-size: 20px;
 	font-weight: 700;
 	text-align: center;
-	vertical-align: middle;
-	line-height: 75px;
-	background-color: #ffffff;
-	height: 75px;
-	width: 175px;
+	line-height: 55px;
+	height: 100px;
+	width: 200px;
 	border-style: solid;
-	margin: 80px 0px 0px 175px;
+	grid-column-start: 8;
+	grid-row-start: 2;
 }
 
 #exercise-answer-2 {
@@ -252,13 +348,12 @@
 	font-size: 20px;
 	font-weight: 700;
 	text-align: center;
-	vertical-align: middle;
-	line-height: 75px;
-	background-color: #ffffff;
-	height: 75px;
-	width: 175px;
+	line-height: 55px;
+	height: 100px;
+	width: 200px;
 	border-style: solid;
-	margin: 75px 0px 0px 375px;
+	grid-column-start: 12;
+	grid-row-start: 4;
 }
 
 #exercise-answer-3 {
@@ -266,13 +361,12 @@
 	font-size: 20px;
 	font-weight: 700;
 	text-align: center;
-	vertical-align: middle;
-	line-height: 75px;
-	background-color: #ffffff;
-	height: 75px;
-	width: 175px;
+	line-height: 55px;
+	height: 100px;
+	width: 200px;
 	border-style: solid;
-	margin: -237px 0px 0px 575px;
+	grid-column-start: 16;
+	grid-row-start: 2;
 }
 
 #exercise-answer-4 {
@@ -280,13 +374,12 @@
 	font-size: 20px;
 	font-weight: 700;
 	text-align: center;
-	vertical-align: middle;
-	line-height: 75px;
-	background-color: #ffffff;
-	height: 75px;
-	width: 175px;
+	line-height: 55px;
+	height: 100px;
+	width: 200px;
 	border-style: solid;
-	margin: 75px 0px 0px 775px;
+	grid-column-start: 20;
+	grid-row-start: 4;
 }
 
 #exercise-answer-5 {
@@ -294,22 +387,24 @@
 	font-size: 20px;
 	font-weight: 700;
 	text-align: center;
-	vertical-align: middle;
-	line-height: 75px;
-	background-color: #ffffff;
-	height: 75px;
-	width: 175px;
+	line-height: 55px;
+	height: 100px;
+	width: 200px;
 	border-style: solid;
-	margin: -237px 0px 0px 975px;
+	grid-column-start: 24;
+	grid-row-start: 2;
 }
 
 #answer-drop-target {
+	position: absolute;
+	left: 50%;
+	top: 5%;
+	margin-left: 175px;
+	margin-top: 40px;
 	border-bottom: dotted;
 	font-family: 'Open Sans', san-serif;
 	font-size: 20px;
 	font-weight: 700;
-	height: 25px;
+	height: 45px;
 	width: 110px;
-	margin: -47px 0px 0px 850px;
 }
-	
