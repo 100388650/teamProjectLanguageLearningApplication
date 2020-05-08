@@ -12,7 +12,7 @@
 	padding: 10px 30px;
 	margin: 15px 0px;
 	background-color: #edc200;
-	border-color: #edc200;
+	border: none;
 	font-family: 'Open Sans', san-serif;
 	font-size: 15px;
 	color: white;
@@ -22,6 +22,39 @@
 	font-family: 'Open Sans', san-serif;
 	color: #ffffff;
 	border: none;
+}
+
+.btn-submit {
+	background-color: #289106;
+	border: none;
+	height: 50px;
+	width: 100px;
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -50px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: #ffffff;
+}
+
+
+.btn-save-changes {
+	background-color: #edc200;
+	border: none;
+	height: 50px;
+	width: 175px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: 75px;
+	margin-left: 100px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: #ffffff;
 }
 
 .todays-lesson-border-top {
@@ -58,22 +91,6 @@
 	font-weight: 700;
 	text-align: center;
 	padding-top: 90px;
-}
-
-.exercise-submit-button {
-	background-color: green;
-	border: none;
-	height: 50px;
-	width: 100px;
-	position: absolute;
-	top: 75%;
-	left: 50%;
-	margin-top: -25px;
-	margin-left: -50px;
-	font-family: 'Open Sans', san-serif;
-	font-size: 20px;
-	font-weight: 700;
-	color: #ffffff;
 }
 
 .sidenav {
@@ -132,7 +149,7 @@
   margin-left: 5px;
 }
 
-#login-body, #registration-body, #main-menu-body {
+#login-body, #registration-body, #main-menu-body, #settings-body {
 	background-color:  #2e3138;
 }
 
@@ -407,4 +424,81 @@
 	font-weight: 700;
 	height: 45px;
 	width: 110px;
+}
+  
+#settings-page-image {
+	height: 375px;
+	width: 375px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -450px;
+	margin-top: -200px;
+}
+
+#settings-title {
+	font-family: 'Open Sans', san-serif;
+	font-size: 35px;
+	color: white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -450px;
+	margin-top: -300px;
+}
+
+#settings-list-title {
+	font-family: 'Open Sans', san-serif;
+	font-size: 35px;
+	color: white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -450px;
+	margin-top: -300px;
+}
+
+#language-list {
+	height: 30px;
+	width: 400px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 100px;
+	margin-top: -100px;
+}
+
+#language-list-title {
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	color: white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 100px;
+	margin-top: -140px;
+}
+
+#display-resolution-list {
+	height: 30px;
+	width: 400px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 100px;
+}
+
+#display-resolution-list-title {
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	color: white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 100px;
+	margin-top: -40px;
 }
