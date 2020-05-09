@@ -1,0 +1,16 @@
+images
+	setting_menu_icon.png
+	todays_lesson_menu_icon.png
+	user_profile_menu_icon.png
+lessons
+	language_learning_application_recap_lesson.html
+	language_learning_application_todays_lesson.html
+login_registration
+	language_learning_application_login_page.html
+	language_learning_application_registration_page.html
+main_menu
+	language_learning_application_main_menu.html
+settings
+	language_learning_application_settings.html
+user_profile
+	language_learning_application_user_profile.html
