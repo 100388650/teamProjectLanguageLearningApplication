@@ -1,0 +1,62 @@
+<!--
+File: language_learning_application_settings.html
+Student: 100388650, 100488543
+Date: 09/05/20
+Course: 5CC518 - Team Project
+Desc: This is settings HTML file for the language learning application. It allows the user to be able to change settings on the application including the langauge and display size.
+Other Files Required: stylesheet.css
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body id="settings-body">
+	<!-- Navigation menu -->
+	<div id="navbar" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="../lessons/language_learning_application_todays_lesson.html">Today's Lesson</a>
+		<a href="../lessons/language_learning_application_recap_lesson.html">Recap Lesson</a>
+		<a href="../user_profile/language_learning_application_user_profile.html">User Profile</a>
+		<a href="../settings/language_learning_application_settings.html">Settings</a>
+	</div>
+	<span class="navicon" onclick="openNav()">&#9776;</span>
+	<p id="settings-title">Settings</p>
+    <form>
+		<p id="language-list-title">Language</p>
+         <select id="language-list">
+            <option value="english">English</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
+            <option value="spanish">Spanish</option>
+        </select>
+		<p id="display-resolution-list-title">Display resolution</p>
+		<select id="display-resolution-list">
+			<option value="1024×576">1024×576</option>
+			<option value="1152×648">1152×648</option>
+			<option value="1280×720">1280×720</option>
+			<option value="1366×768">1366×768</option>
+			<option value="1600×900">1600×900</option>
+			<option value="1920×1080">1920×1080</option>
+        </select>
+		<div id="btn-save-changes-settings">
+			<button class="btn-primary">Save changes</button>
+		</div>
+    </form>
+    <img id="settings-page-image" src="../images/setting_menu_icon.png">
+    <div class="vertical-divider"></div>
+	<script>
+		// Opens the navigation menu when clicked on by expanding it to a set width
+		function openNav() {
+			document.getElementById("navbar").style.width = "250px";
+		}
+		// Closes the navigation menu when the times icon is clicked on by decreasing the width to 0
+		function closeNav() {
+			document.getElementById("navbar").style.width = "0";
+		}
+	</script>
+</body>
+</html>
