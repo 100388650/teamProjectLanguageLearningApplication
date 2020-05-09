@@ -1,0 +1,55 @@
+<!--
+File: language_learning_application_user_profile.html
+Student: 100388650
+Date: 09/05/20
+Course: 5CC518 - Team Project
+Desc: This is user profile HTML file for the language learning application. This page allows the user to be able to change their account username and password as well as email address. Also, they are allowed to delete their account if they wanted to.
+Other Files Required: stylesheet.css
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body id="user-profile-body">
+	<!-- Navigation menu -->
+	<div id="navbar" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="../lessons/language_learning_application_todays_lesson.html">Today's Lesson</a>
+		<a href="../lessons/language_learning_application_recap_lesson.html">Recap Lesson</a>
+		<a href="../user_profile/language_learning_application_user_profile.html">User Profile</a>
+		<a href="../settings/language_learning_application_settings.html">Settings</a>
+	</div>
+	<span class="navicon" onclick="openNav()">&#9776;</span>
+    <p id="user-profile-title">User Profile</p>
+    <form>
+		<p id="change-email-address-title">Change Email Address</p>
+		<input type="text" id="change-email-address-textbox" name="email-address">
+		<p id="change-username-title">Change Username</p>
+		<input type="text" id="change-username-textbox" name="email-address">
+		<p id="change-password-title">Change Password</p>
+		<input type="text" id="change-password-textbox" name="email-address">
+		<div id="btn-save-changes-user-profile">
+			<button class="btn-primary">Save changes</button>
+		</div>
+		<div id="btn-delete-account-user-profile">
+			<button class="btn-delete-account">Delete account</button>
+		</div>
+    </form>
+    <img id="user-profile-page-image" src="../images/user_profile_menu_icon.png">
+    <div class="vertical-divider"></div>
+	<script>
+		// Opens the navigation menu when clicked on by expanding it to a set width
+		function openNav() {
+			document.getElementById("navbar").style.width = "250px";
+		}
+		// Closes the navigation menu when the times icon is clicked on by decreasing the width to 0
+		function closeNav() {
+			document.getElementById("navbar").style.width = "0";
+		}
+	</script>
+</body>
+</html>
