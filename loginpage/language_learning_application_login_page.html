@@ -16,10 +16,11 @@ Other Files Required: stylesheet.css
 </head>
 <body id="login-body">
 	<form>
+		<p id="dont-have-an-account-text">Don't have an account? <a href="../login_registration/language_learning_application_registration_page.html">Register here</a></p>
 		<input type="text" id="login-username-textbox" name="username" placeholder="Username"><br>
 		<input type="text" id="login-password-textbox" name="password" placeholder="Password"><br>
 		<input type="checkbox" id="keep-me-logged-in-checkbox" name="keep-me-logged-in">
-		<label for="keep-me-logged-in-checkbox" id="keep-me-logged-in-text">Keep me logged in</label><br>
+		<p for="keep-me-logged-in-checkbox" id="keep-me-logged-in-text">Keep me logged in</p><br>
 		<div id="btn-login-layout">
 			<button onclick="button_handler()" type="submit" class="btn-primary">Log In</button>
 		</div>
