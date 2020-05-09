@@ -14,3 +14,5 @@ settings
 	language_learning_application_settings.html
 user_profile
 	language_learning_application_user_profile.html
+	
+stylesheet.css
