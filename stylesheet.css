@@ -330,6 +330,25 @@ language_learning_application_todays_lesson.html, language_learning_application_
 	cursor: pointer;
 }
 
+#dont-have-an-account-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: 100px;
+	margin-top: -140px;
+	width: 300px;
+	color: white;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+}
+
+#dont-have-an-account-text a {
+	text-decoration: none;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	color: #256588;
+}
+
 #btn-login-layout{
 	position: absolute;
 	top: 50%;
