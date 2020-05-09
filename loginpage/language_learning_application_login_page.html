@@ -1,3 +1,11 @@
+<!--
+File: language_learning_application_login_page.html
+Student: 100388650
+Date: 09/05/20
+Course: 5CC518 - Team Project
+Desc: This is login HTML file for the language learning application. This page allows the user to access the application by logging in using their account details.
+Other Files Required: stylesheet.css
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +16,11 @@
 </head>
 <body id="login-body">
 	<form>
-		<div id="login-form">
-			<input type="text" id="username" name="username" placeholder="Username"><br>
-			<input type="text" id="password" name="password" placeholder="Password"><br>
-			<input type="checkbox" id="keep-me-logged-in-checkbox" name="keep-me-logged-in">
-			<label for="keep-me-logged-in-checkbox" id="keep-me-logged-in-text">Keep me logged in</label><br>
+		<input type="text" id="login-username-textbox" name="username" placeholder="Username"><br>
+		<input type="text" id="login-password-textbox" name="password" placeholder="Password"><br>
+		<input type="checkbox" id="keep-me-logged-in-checkbox" name="keep-me-logged-in">
+		<label for="keep-me-logged-in-checkbox" id="keep-me-logged-in-text">Keep me logged in</label><br>
+		<div id="btn-login-layout">
 			<button onclick="button_handler()" type="submit" class="btn-primary">Log In</button>
 		</div>
 	</form>
@@ -20,6 +28,7 @@
 	<div class="vertical-divider"></div>
 	
 	<script type="type/javascript">
+		// Fetches username detail using Python on Eel from a database
 		function button_handler() {
 			var username = document.querySelector("#username").value
 			eel.fetchLoginDetails(username)
