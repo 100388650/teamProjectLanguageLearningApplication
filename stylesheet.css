@@ -1,3 +1,12 @@
+/*
+File: stylesheet.html
+Student: 100388650, 100488543
+Date: 09/05/20
+Course: 5CC518 - Team Project
+Desc: This is the CSS file for the language learning application. It includes the styles for HTML elements.
+Other Files Required: language_learning_application_login_page.html, language_learning_application_registration_page.html, language_learning_application_main_menu.html,
+language_learning_application_todays_lesson.html, language_learning_application_recap_lesson.html, language_learning_application_user_profile.html, language_learning_application_settings.html
+*/
 .vertical-divider {
 	border-left: 2px solid #3d414b;
 	height: 400px;
@@ -9,13 +18,14 @@
 }
 
 .btn-primary {
-	padding: 10px 30px;
-	margin: 15px 0px;
 	background-color: #edc200;
 	border: none;
+	height: 50px;
+	width: 175px;
 	font-family: 'Open Sans', san-serif;
-	font-size: 15px;
-	color: white;
+	font-size: 20px;
+	color: #ffffff;
+	cursor: pointer;
 }
 
 .btn-group {
@@ -38,23 +48,18 @@
 	font-size: 20px;
 	font-weight: 700;
 	color: #ffffff;
+	cursor: pointer;
 }
 
-
-.btn-save-changes {
-	background-color: #edc200;
+.btn-delete-account {
+	background-color: #ff0000;
 	border: none;
 	height: 50px;
 	width: 175px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: 75px;
-	margin-left: 100px;
 	font-family: 'Open Sans', san-serif;
 	font-size: 20px;
-	font-weight: 700;
 	color: #ffffff;
+	cursor: pointer;
 }
 
 .todays-lesson-border-top {
@@ -68,6 +73,24 @@
 
 .todays-lesson-border-bottom {
 	background-image: linear-gradient(#ee805b, #f03c00);
+	height: 80px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.recap-lesson-border-top {
+	background-image: linear-gradient(#679eb3, #00a2e0);
+	height: 80px;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.recap-lesson-border-bottom {
+	background-image: linear-gradient(#679eb3, #00a2e0);
 	height: 80px;
 	width: 100%;
 	position: absolute;
@@ -100,7 +123,7 @@
 	z-index: 1;
 	top: 0;
 	left: 0;
-	background-image: linear-gradient(#ee805b, #f03c00);
+	background-image: linear-gradient(#2e3138, #3d414b);
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
@@ -117,6 +140,68 @@
 }
 
 .sidenav .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.sidenav-todays-lesson {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-image: linear-gradient(#ee805b, #f03c00);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.sidenav-todays-lesson a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	color: #ffffff;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav-todays-lesson .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+.sidenav-recap-lesson {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-image: linear-gradient(#679eb3, #00a2e0);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.sidenav-recap-lesson a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	color: #ffffff;
+	display: block;
+	transition: 0.3s;
+}
+
+.sidenav-recap-lesson .closebtn {
 	position: absolute;
 	top: 0;
 	right: 25px;
@@ -141,72 +226,133 @@
 }
 
 .progress-bar-dot {
-  height: 25px;
-  width: 25px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  display: inline-block;
-  margin-left: 5px;
+	height: 25px;
+	width: 25px;
+	background-color: #ffffff;
+	border: 2px solid #ffffff;
+	border-radius: 50%;
+	display: inline-block;
+	margin-left: 5px;
 }
 
-#login-body, #registration-body, #main-menu-body, #settings-body {
+.progress-bar-dot-incomplete {
+	height: 25px;
+	width: 25px;
+	border: 2px solid #ffffff;
+	border-radius: 50%;
+	display: inline-block;
+	margin-left: 5px;
+}
+
+#login-body, #registration-body, #main-menu-body, #settings-body, #user-profile-body {
 	background-color:  #2e3138;
 }
 
-#login-form {
+#login-username-textbox {
+	height: 30px;
+	width: 375px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
+	margin-left: 100px;
 	margin-top: -100px;
-	margin-left: 100px;
 }
 
-#registration-form {
+#login-password-textbox {
+	height: 30px;
+	width: 375px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: 100px;
+	margin-top: -35px;
+}
+
+#register-username-textbox {
+	height: 30px;
+	width: 375px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	margin-top: -120px;
 	margin-left: 100px;
+	margin-top: -60px;
 }
 
-#username {
+#register-password-textbox {
 	height: 30px;
-	width: 300px;
-	font-family: 'Open Sans', san-serif;
-	font-size: 15px;
-}
-
-#password {
-	height: 30px;
-	width: 300px;
+	width: 375px;
 	font-family: 'Open Sans', san-serif;
 	font-size: 15px;
 	margin: 15px 0px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 100px;
+	margin-top: 5px;
 }
 
-#email-address {
+#email-address-textbox {
 	height: 30px;
-	width: 300px;
+	width: 375px;
 	font-family: 'Open Sans', san-serif;
 	font-size: 15px;
-	margin: 15px 0px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 100px;
+	margin-top: -125px;
 }
 
 #keep-me-logged-in-text {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: 130px;
+	margin-top: 20px;
+	width: 150px;
 	color: white;
 	font-family: 'Open Sans', san-serif;
-	font-size: 12px;
-	margin: -20px 0px;
+	font-size: 15px;
 }
 
-#container {
-	height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
+#keep-me-logged-in-checkbox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: 105px;
+	margin-top: 25px;
+	cursor: pointer;
 }
 
+#btn-login-layout{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: 100px;
+	margin-top: 60px;
+}
+
+#btn-register-layout {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: 100px;
+	margin-top: 80px;
+}
+
+/* Grid templates allows the buttons to be correctly positioned. It creates a grid with the columns and rows being set at a fixed size */
 #menu-container {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -630px;
+	margin-top: -250px;
 	display: grid;
 	grid-template-columns: repeat(1, 500px);
 	grid-template-rows: repeat(2, 250px);	
@@ -216,6 +362,7 @@
 	background-color: #ee805b;
 	height: 500px;
 	width: 500px;
+	cursor: pointer;
 	grid-column-start: 1;
 }
 
@@ -261,6 +408,7 @@
 	background-color: #679eb3;
 	height: 250px;
 	width: 750px;
+	cursor: pointer;
 	grid-column-start: 2;
 }
 
@@ -292,6 +440,7 @@
 	background-color: #fecc5d;
 	height: 250px;
 	width: 375px;
+	cursor: pointer;
 	grid-column-start: 2;
 	grid-column-end: 3;
 	grid-row-start: 2;
@@ -300,15 +449,20 @@
 #btn-label-user-profile {
 	font-size: 40px;
 	text-align: center;
-	position: relative;
-	bottom: 30px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -45px;
+	margin-top: 185px;
 }
 
 #btn-image-user-profile {
 `	height: 125px;
 	width: 125px;
-	position: relative;
-	top: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: 5px;
 }
 
 #btn-settings {
@@ -316,6 +470,7 @@
 	height: 250px;
 	width: 375px;
 	margin-left: 375px;
+	cursor: pointer;
 	grid-column-start: 2;
 	grid-column-end: 3;
 	grid-row-start: 2;
@@ -324,17 +479,24 @@
 #btn-label-settings {
 	font-size: 40px;
 	text-align: center;
-	position: relative;
-	bottom: 30px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 365px;
+	margin-top: 185px;
 }
 
 #btn-image-settings {
 	height: 175px;
 	width: 175px;
-	position: relative;
-	top: 10px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 350px;
+	margin-top: 5px;
 }
 
+/* Grid templates allows the buttons to be correctly positioned. It creates a grid with the columns and rows being set at a fixed size. */
 #answer-grid {
 	width: 100%;
 	height: 100%;
@@ -356,6 +518,7 @@
 	height: 100px;
 	width: 200px;
 	border-style: solid;
+	cursor: pointer;
 	grid-column-start: 8;
 	grid-row-start: 2;
 }
@@ -369,6 +532,7 @@
 	height: 100px;
 	width: 200px;
 	border-style: solid;
+	cursor: pointer;
 	grid-column-start: 12;
 	grid-row-start: 4;
 }
@@ -382,6 +546,7 @@
 	height: 100px;
 	width: 200px;
 	border-style: solid;
+	cursor: pointer;
 	grid-column-start: 16;
 	grid-row-start: 2;
 }
@@ -395,6 +560,7 @@
 	height: 100px;
 	width: 200px;
 	border-style: solid;
+	cursor: pointer;
 	grid-column-start: 20;
 	grid-row-start: 4;
 }
@@ -408,6 +574,7 @@
 	height: 100px;
 	width: 200px;
 	border-style: solid;
+	cursor: pointer;
 	grid-column-start: 24;
 	grid-row-start: 2;
 }
@@ -447,20 +614,9 @@
 	margin-top: -300px;
 }
 
-#settings-list-title {
-	font-family: 'Open Sans', san-serif;
-	font-size: 35px;
-	color: white;
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	margin-left: -450px;
-	margin-top: -300px;
-}
-
 #language-list {
 	height: 30px;
-	width: 400px;
+	width: 375px;
 	font-family: 'Open Sans', san-serif;
 	font-size: 20px;
 	position: absolute;
@@ -483,7 +639,7 @@
 
 #display-resolution-list {
 	height: 30px;
-	width: 400px;
+	width: 375px;
 	font-family: 'Open Sans', san-serif;
 	font-size: 20px;
 	position: absolute;
@@ -501,4 +657,119 @@
 	top: 50%;
 	margin-left: 100px;
 	margin-top: -40px;
+}
+
+#btn-save-changes-settings {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: 75px;
+	margin-left: 100px;
+}
+
+#user-profile-page-image {
+	height: 425px;
+	width: 300px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -400px;
+	margin-top: -225px;
+}
+
+#user-profile-title {
+	font-family: 'Open Sans', san-serif;
+	font-size: 35px;
+	color: white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -450px;
+	margin-top: -300px;
+}
+
+#change-email-address-textbox {
+	height: 30px;
+	width: 375px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 100px;
+	margin-top: -150px;
+}
+
+#change-email-address-title {
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	color: white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 100px;
+	margin-top: -190px;
+}
+
+#change-username-textbox {
+	height: 30px;
+	width: 375px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 100px;
+	margin-top: -50px;
+}
+
+#change-username-title {
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	color: white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 100px;
+	margin-top: -90px;
+}
+
+#change-password-textbox {
+	height: 30px;
+	width: 375px;
+	font-family: 'Open Sans', san-serif;
+	font-size: 15px;
+	margin: 15px 0px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 100px;
+	margin-top: 50px;
+}
+
+#change-password-title {
+	font-family: 'Open Sans', san-serif;
+	font-size: 20px;
+	color: white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: 100px;
+	margin-top: 10px;
+}
+
+#btn-save-changes-user-profile {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: 100px;
+	margin-top: 130px;
+}
+
+#btn-delete-account-user-profile {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: 300px;
+	margin-top: 130px;
 }
