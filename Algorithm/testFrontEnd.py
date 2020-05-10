@@ -4,6 +4,9 @@ import database
 import functions
 import json
 from datetime import datetime
+
+countCard = 0
+
 root = Tk()
 
 # Variables START
@@ -194,24 +197,21 @@ def localUpdateCard(studiedId, cardCategory, success):
 # Algorithm functions END
 
 # GUI elements START
+
+def iterateCard(countCard):
+    # Iterates by 1 when the user presses 'submit'
+    # It is used in fetching the next card or ending the study session
+    countCard = countCard + 1
+    return countCard
+
 user_id_form = Entry(root).place(x=95, y=180)
 user_id = user_id_form.get()
-start_study_session =Button(root, text="Start studying", command=localGetCards(user_id))
-
-# GUI elements END
-
-# GUI elements START
-card_question = Label(root, text=cardQuestionText, font=("Arial", 36))
-card_answer = Label(root, text=cardAnswerText, font=("Arial", 36))
-user_answer_form = Entry(root).place(x=95, y=180)
-user_answer = user_answer_form.get()
-# Change location if needed
-answer_submit = Button(root, text="Submit answer", command=checkCard(currentCardNo, user_answer)).place(x=80, y=100)
-
-if cardCorrect:
-    check_answer = Label(root, text=correctAnswerLabel)
-    functions.calculate_next_date(user_answer,)
-else:
-    check_answer = Label(root, text=incorrectAnswerLabel)
-
+start_study_session = Button(root, text="Start studying", command=localGetCards(user_id))
+show_card_front = Label(root, text=local_to_study_card_front[countCard], font=("Arial", 36), compound=CENTER)
+user_answer = Entry(root).place(x=95, y=260)
+submit_answer = Button(root, text ="Submit answer", command=localCheckCard(user_answer.get()))
+show_card_back = Button()
+currentCardCategory = local_to_study_card_cat[countCard]
+currentCardId = local_to_study_card_id[countCard]
+next_card_button = Button(root, text="Get next card", command= lambda :[iterateCard(countCard), localUpdateCard(currentCardId,currentCardCategory,cardCorrect)])
 # GUI elements END
