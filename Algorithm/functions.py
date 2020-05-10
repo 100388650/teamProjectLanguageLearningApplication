@@ -1,6 +1,5 @@
 # Functions for the spaced repetition algorithm
 from datetime import date
-from spaced_repetition import database
 import time
 
 firstDayUseProgram = date.today() # Defines the date of first use for the program
@@ -30,20 +29,21 @@ def calculate_next_date(userAnswer, cardCat):
 def calculate_next_cat(userAnswer, cardCat):
     # Calculates the new category for new cards (Category A, B and C)
     # And starts a timer for the card to be checked again
+    # ADD TIMER
     if userAnswer:
-        if cardCat == 0:
-            newCardCat = 0.1
-        elif cardCat == 0.1:
+        if cardCat == 0.1:
             newCardCat = 0.2
+        elif cardCat == 0.2:
+            newCardCat = 0.3
         else:
             newCardCat = 1
     else:
-        if cardCat == "A":
-            newCardCat = "A"
-        elif cardCat == "B":
-            newCardCat = "A"
-        elif cardCat == "C":
-            newCardCat = "B"
+        if cardCat == 0.1:
+            newCardCat = 0.1
+        elif cardCat == 0.2:
+            newCardCat = 0.1
+        elif cardCat == 0.3:
+            newCardCat = 0.2
     return newCardCat
 
 
@@ -53,7 +53,8 @@ def start_of_study_check(firstDayUsed):
     daysElapsed = firstDayUsed - currentDay
     daysElapsedProgram = currentDay - firstDayUseProgram
     g = gen_fib()
-    fibs = [next(g) for _ in range(daysElapsed)] # Get the number of fibonacci places equal to the days the program has been used for
+    fibs = [next(g) for _ in range(daysElapsed)]
+    # Get the number of fibonacci places equal to the days the program has been used for
     if daysElapsedProgram in fibs:
         return True
     else:

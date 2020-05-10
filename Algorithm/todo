@@ -1,0 +1,9 @@
+Implement Flask to pass JSON data from Python to the JS
+Receive JSON data from Python on the JS code in the HTML
+    - Start with the login system
+    - Then settings
+    - Lastly, the exercises
+Add timer to functions.py calculate_next_cat
+
+Change 'functions' and 'testFrontEnd' to use local JSON
+Change 'database' to use the new SQL (front, back content as well as firstAccessed date)

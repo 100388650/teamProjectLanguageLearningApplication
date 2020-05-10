@@ -25,7 +25,7 @@ cursor = connection.cursor()
 
 def get_new_cards():
     try:
-        # First get the new car
+        # First get the new cards
         postgreSQL_select_Query = sql.SQL("select * from cards where category IS NULL and userId = ($i)").format(sql.Identifier(userId))
         cursor.execute(postgreSQL_select_Query)
         new_cards = cursor.fetchmany(amountToFetch) # Limits the number of rows fetched by 'amountToFetch'
