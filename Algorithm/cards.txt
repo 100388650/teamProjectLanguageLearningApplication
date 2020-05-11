@@ -1,0 +1,1 @@
+{"cards": [{"cardId": "0", "category": "0.1", "front_content": "wordA", "back_content": "wordA_answer", "userId": "0", "firstAccessed": "3"}]}

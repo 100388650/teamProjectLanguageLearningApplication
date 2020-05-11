@@ -1,3 +1,0 @@
-Currently, the Python application must be loaded by the user first and it will open the relevant HTML page as well launch the Python code that
-will fetch all the relevant studying information for the current day and store them in JSON files that the JS code on the HTML pages can then access
-when the user logs in, changes settings or during the exercises.

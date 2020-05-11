@@ -6,14 +6,13 @@ firstDayUseProgram = date.today() # Defines the date of first use for the progra
 start_minutes = time.perf_counter()
 studiedCards = [] # An array of cards already studied
 
-def gen_fib(): # A function for generating the fibonnaci sequence numbers for the daily cards
-    a,b = 1,1
-    yield a
-    yield b
+def generate_fib():  # A function for generating the fibonnaci sequence numbers for the daily cards
+    first, second = 1, 1
+    yield first
+    yield second
     while True:
-        a,b = b,a+b
-        yield b
-
+        first, second = second, first + second
+        yield second
 
 def calculate_next_date(userAnswer, cardCat):
     # Gets the information of the card currently being studied

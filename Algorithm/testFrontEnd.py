@@ -3,7 +3,7 @@ from tkinter import *
 import database
 import functions
 import json
-from datetime import datetime
+from datetime import date
 
 countCard = 0
 
@@ -11,8 +11,8 @@ root = Tk()
 
 # Variables START
 # Database variables START
-all_cards = database.get_new_cards() # All cards currently stored
-to_study = database.return_review_cards() # Cards to study
+all_cards = database.get_new_cards()  # All cards currently stored
+to_study = database.return_review_cards()  # Cards to study
 cardCorrect = False
 no_of_cards_left = len(to_study)
 no_of_total_cards = len(all_cards)
@@ -26,7 +26,7 @@ cards['cards'].append({
     'front_content': 'wordA',
     'back_content': 'wordA_answer',
     'userId': '0',
-    'firstAccessed': datetime.date(2020,5,1)
+    'firstAccessed': date(2020, 5, 1)
 })
 cards['cards'].append({
     'cardId': '1',
@@ -34,7 +34,7 @@ cards['cards'].append({
     'front_content': 'wordB',
     'back_content': 'wordB_answer',
     'userId': '0',
-    'firstAccessed': datetime.date(2020,4,1)
+    'firstAccessed': date(2020, 4, 1)
 })
 cards['cards'].append({
     'cardId': '2',
@@ -42,16 +42,14 @@ cards['cards'].append({
     'front_content': 'wordC',
     'back_content': 'wordC_answer',
     'userId': '0',
-    'firstAccessed': datetime.date(2020,3,1)
+    'firstAccessed': date(2020, 3, 1)
 })
 
-local_to_study_card_id = [] # Push in cards to study from the local JSON
+local_to_study_card_id = []  # Push in cards to study from the local JSON
 local_to_study_card_cat = []
 local_to_study_card_front = []
 local_to_study_card_back = []
 
-no_of_total_local_cards = len(cards)
-no_of_to_study_local_cards = len(local_to_study_card_id)
 # Variables END
 
 # Algorithm functions START
@@ -59,13 +57,13 @@ with open('cards.txt', 'w') as output:
     json.dump(cards, output)
 
 
-def generate_fib(): # A function for generating the fibonnaci sequence numbers for the daily cards
-    a,b = 1,1
-    yield a
-    yield b
+def generate_fib():  # A function for generating the fibonnaci sequence numbers for the daily cards
+    first, second = 1, 1
+    yield first
+    yield second
     while True:
-        a,b = b,a+b
-        yield b
+        first, second = second, first + second
+        yield second
 
 
 def localGetCards(userID):
@@ -86,7 +84,7 @@ def localGetCards(userID):
                         i = i + 1
                 else:
                     # For cards that are not new, only get them if they are to be reviewed on the current date
-                    todayDate = datetime.today()
+                    todayDate = date.today()
                     dateToCheck = c['firstAccessed']
                     differenceToCheck = todayDate - dateToCheck
                     fib = generate_fib()
@@ -102,14 +100,16 @@ def localGetCards(userID):
                         local_to_study_card_back.insert(c['back_content'])
 
 
-def checkCard(currentCardNo, userInput): # Checks the user's answer for the cards fetched from the database
+def checkCard(currentCardNo, userInput):  # Checks the user's answer for the cards fetched from the database
     if all_cards[currentCardNo] == userInput:
         cardCorrect = True
+        return cardCorrect
     else:
         cardCorrect = False
+        return cardCorrect
 
 
-def localCheckCard(currentCardNo,userInput): # Checks the user's answer for cards saved locally
+def localCheckCard(currentCardNo, userInput):  # Checks the user's answer for cards saved locally
 
     with open('cards.txt') as cards:
         cardData = json.load(cards)
@@ -123,11 +123,11 @@ def localCheckCard(currentCardNo,userInput): # Checks the user's answer for card
                     else:
                         cardCorrect = False
                         if (i == (no_of_to_study_local_cards)):
-                            cardCorrect = False # Error handling in case the card does not exist
+                            cardCorrect = False  # Error handling in case the card does not exist
                             error = "Error: the card does not exist."
                             return error
                         else:
-                            i = (i+1)
+                            i = (i + 1)
 
 
 def localUpdateCard(studiedId, cardCategory, success):
@@ -142,14 +142,14 @@ def localUpdateCard(studiedId, cardCategory, success):
             local_to_study_card_front.pop(cardIndex)
             local_to_study_card_back.pop(cardIndex)
             local_to_study_card_cat.pop(cardIndex)
-            newCardCategory = (cardCategory +1)
+            newCardCategory = (cardCategory + 1)
             oldCardCategory = cardCategory
             # The JSON file is updated below, with the new category
             with open("cards.txt", "r") as cards:
                 cardsData = cards.read()
-            cardsData = cardsData.replace(oldCardCategory,newCardCategory)
+            cardsData = cardsData.replace(oldCardCategory, newCardCategory)
 
-            with open('cards.txt','w') as cards:
+            with open('cards.txt', 'w') as cards:
                 cards.write(cardsData)
         else:
             # If the answer was not correct, then the category is reduced by one instead
@@ -194,6 +194,7 @@ def localUpdateCard(studiedId, cardCategory, success):
             with open('cards.txt', 'w') as cards:
                 cards.write(cardsData)
 
+
 # Algorithm functions END
 
 # GUI elements START
@@ -204,14 +205,18 @@ def iterateCard(countCard):
     countCard = countCard + 1
     return countCard
 
+
 user_id_form = Entry(root).place(x=95, y=180)
 user_id = user_id_form.get()
 start_study_session = Button(root, text="Start studying", command=localGetCards(user_id))
 show_card_front = Label(root, text=local_to_study_card_front[countCard], font=("Arial", 36), compound=CENTER)
 user_answer = Entry(root).place(x=95, y=260)
-submit_answer = Button(root, text ="Submit answer", command=localCheckCard(user_answer.get()))
+submit_answer = Button(root, text="Submit answer", command=localCheckCard(user_answer.get()))
 show_card_back = Button()
 currentCardCategory = local_to_study_card_cat[countCard]
 currentCardId = local_to_study_card_id[countCard]
-next_card_button = Button(root, text="Get next card", command= lambda :[iterateCard(countCard), localUpdateCard(currentCardId,currentCardCategory,cardCorrect)])
+next_card_button = Button(root, text="Get next card", command=lambda: [iterateCard(countCard),
+                                                                       localUpdateCard(currentCardId,
+                                                                                       currentCardCategory,
+                                                                                       cardCorrect)])
 # GUI elements END
